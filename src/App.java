@@ -4,28 +4,22 @@ import net.salesianos.farmer.classes.Storage;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int storgeCapacity = 5;
-        int farmerVegeCapacity = 10;
+        int storageCapacity = 3; // Capacidad máxima del almacén
+        int farmerPlantCapacity = 5; // Cantidad de verduras a plantar
 
-        Storage storage = new Storage(storgeCapacity);
+        Storage storage = new Storage(storageCapacity);
 
-        Thread paco = new Thread(new Farmer("Paco", storage, farmerVegeCapacity));
-        Thread ramon = new Thread(new Farmer("Ramón", storage, farmerVegeCapacity));
+        // Un único productor
+        Farmer farmer = new Farmer("Khal-175", storage, farmerPlantCapacity);
 
-        Thread faustino = new Thread(new Client("Faustino", storage, 5));
-        Thread mrGentleman = new Thread(new Client("Mr. Gentleman", storage, 10));
-        Thread loquendo = new Thread(new Client("Loquendo", storage, 5));
+        Client client = new Client("El Juan", storage, 5);
 
-        paco.start();
-        ramon.start();
-        faustino.start();
-        mrGentleman.start();
-        loquendo.start();
+        farmer.start();
+        client.start();
 
-        paco.join();
-        ramon.join();
-        faustino.join();
-        mrGentleman.join();
-        loquendo.join();
+        farmer.join();
+        client.join();
+
+        System.out.println("fin.");
     }
 }
