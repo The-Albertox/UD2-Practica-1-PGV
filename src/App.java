@@ -15,5 +15,17 @@ public class App {
         Thread faustino = new Thread(new Client("Faustino", storage, 5));
         Thread mrGentleman = new Thread(new Client("Mr. Gentleman", storage, 10));
         Thread loquendo = new Thread(new Client("Loquendo", storage, 5));
+
+        paco.start();
+        ramon.start();
+        faustino.start();
+        mrGentleman.start();
+        loquendo.start();
+
+        paco.join();
+        ramon.join();
+        faustino.join();
+        mrGentleman.join();
+        loquendo.join();
     }
 }
