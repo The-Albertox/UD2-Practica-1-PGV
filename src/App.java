@@ -27,5 +27,6 @@ public class App {
         faustino.join();
         mrGentleman.join();
         loquendo.join();
+        System.out.println("fin");
     }
 }

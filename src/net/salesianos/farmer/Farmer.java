@@ -27,7 +27,7 @@ public class Farmer extends Thread {
         for (int i = 0; i < plantCapacity; i++) {
             try {
                 String vegetableName = vegetables[random.nextInt(vegetables.length)];
-                int growTime = random.nextInt(10000) + 1000;
+                int growTime = random.nextInt(10000) + 500;
                 Vegetable vegetable = new Vegetable(vegetableName, growTime);
 
                 System.out.println(name + " planta: " + vegetable);
