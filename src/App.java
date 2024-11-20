@@ -18,6 +18,10 @@ public class App {
 
         paco.start();
         ramon.start();
+
+        paco.setPriority(Thread.MAX_PRIORITY);
+        ramon.setPriority(Thread.MAX_PRIORITY);
+
         faustino.start();
         mrGentleman.start();
         loquendo.start();
@@ -27,5 +31,6 @@ public class App {
         faustino.join();
         mrGentleman.join();
         loquendo.join();
+        System.out.println("fin");
     }
 }
